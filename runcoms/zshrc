@@ -11,3 +11,10 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+# load zshrc files
+ZSHRCS=($HOME/.zshrc.*)
+for f in ${ZSHRCS}; do
+    if [ -f $f ]; then
+        source $f
+    fi
+done
